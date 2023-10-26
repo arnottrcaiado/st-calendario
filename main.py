@@ -90,8 +90,3 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
-# Execute o aplicativo Streamlit
-if __name__ == "__main__":
-    st.run_app()
-
