@@ -37,7 +37,7 @@ with st.container():
     carga_horaria_total = st.number_input("Carga Horária Total:", min_value=0, max_value=3000)
     carga_horaria_teorica = st.number_input("Carga Horária Teórica:", min_value=0, max_value=1000)
     formacao_inicial = st.number_input("Formação Inicial (CH):", min_value=0, max_value=200)
-    horas_semana = st.number_input("Horas Teóricas por Semana:", min_value=, max_value=10)
+    horas_semana = st.number_input("Horas Teóricas por Semana:", min_value=0, max_value=10)
     dia_semana = st.radio("Aulas Fixas:", ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
     semana_complementar = st.radio("Aulas Complementares (semana):", ["Sem Aulas Complementares", "Primeira", "Segunda", "Terceira", "Quarta"])
     dia_complementar = st.radio("Aulas Complementares:", ["Sem Aulas Complementares", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
