@@ -10,5 +10,7 @@ import pandas as pd
 
 st.markdown("# Calendario")
 st.title("Titulo")
+st.header("Cabeçalho")
+st.subheader("Subcabeçalho")
 st.button("Enviar")
 
