@@ -7,6 +7,8 @@
 #
 
 import streamlit as st
+import mostra as ms
+from mostra import generate_calendar
 
 
 # Substitua 'tabelaAgencias' pelos valores reais que você deseja usar para o seletor.
@@ -47,6 +49,10 @@ with st.container():
     if col1.button("Calendário (1)"):
         # Lógica para processar Calendário (1)
         st.write("Você pressionou o botão Calendário (1)")
+          # Testar a função generate_calendar com valores de amostra.
+        sample_data = ["Janeiro;2023;1-S-i;2-M-i;3-T-t;4-W-t;5-T-t;25;5;30"]
+        generate_calendar("Agencia1", "Curso1", "Turma1", "Turno1", "Municipio1", "FormacaoTeorica1", 100, 50, 5, "FormacaoInicial1", "FormacaoFinal1", "PeriodoFerias1", "InicioeTermino1", sample_data)
+
 
     if col2.button("Calendário (2)"):
         # Lógica para processar Calendário (2)
@@ -89,4 +95,3 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
