@@ -10,6 +10,7 @@ import streamlit as st
 import mostra as ms
 import calcula as ca
 from mostra import generate_calendar
+import pandas as pd
 
 
 # Substitua 'tabelaAgencias' pelos valores reais que você deseja usar para o seletor.
@@ -37,6 +38,19 @@ tabelaAgencias = [  "RECIFE",
                     "CARPINAR" ]
 
 
+# Função para mostrar a tabela quando o botão for clicado
+def mostrarMunicipios(dados):
+    st.write(dados)
+
+# Função para fazer upload e atualizar a tabela
+def atualizar_tabela():
+    uploaded_file = st.file_uploader("Carregar arquivo CSV para atualizar a tabela", type=["csv"])
+    if uploaded_file is not None:
+        uploaded_data = pd.read_csv(uploaded_file)
+        data = uploaded_data
+        return data
+
+
 # Configurações gerais da página
 st.set_page_config(
     page_title="Calendário - Tela de Entrada de Dados [v30.8.2023]",
@@ -49,6 +63,15 @@ st.title("Calendário - Tela de Entrada")
 
 # Criando um contêiner para alinhar o formulário
 with st.container():
+    tabelaFeriados = pd.read_csv("./dados/feriados.csv") #path folder of the data file
+    tabelamunicipios = pd.read_csv("./dados/municipiosPe.csv")
+    # Botão para mostrar a tabela
+    if st.button('Municipios'):
+       st.write(tabelamunicipios)
+    if st.button('Feriados'):
+       st.write(tabelaFeriados)
+
+
     # Formulário
     st.subheader("Dados de Entrada")
     agencia = st.selectbox("Agência:", tabelaAgencias)
