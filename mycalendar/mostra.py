@@ -52,7 +52,7 @@ def generate_calendar(
         agencia, curso, turma, turno, municipio,
         formacaoTeorica, chtotal, chteoricatotal, chDiaria,
         formacaoInicial, formacaoFinal, periodoFerias, inicioeTermino, data,
-        logo_path="./ciee.jpg"
+        logo_path="./static/ciee.jpg"
     ):
     st.title("Calendário de Aulas")
     
