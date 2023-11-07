@@ -8,11 +8,34 @@
 
 import streamlit as st
 import mostra as ms
+import calcula as ca
 from mostra import generate_calendar
 
 
 # Substitua 'tabelaAgencias' pelos valores reais que você deseja usar para o seletor.
-tabelaAgencias = ["Agência1", "Agência2", "Agência3"] 
+tabelaAgencias = [  "RECIFE",
+                    "OLINDA",
+                    "IPOJUCA",
+                    "FACULDADE DOS GUARARAPES",
+                    "FAFIRE",
+                    "LIMOEIRO",
+                    "GRAVATÁ",
+                    "SALGUEIRO",
+                    "CARPINA",
+                    "VITÓRIA",
+                    "GARANHUNS",
+                    "SERRA TALHADA",
+                    "CARUARU",
+                    "PETROLINA",
+                    "UCN - SÃO PAULO",
+                    "UCN - ESPÍRITO SANTO",
+                    "UCN - RIO GRANDE DO SUL",
+                    "UCN - PARANÁ",
+                    "UCN - RIO DE JANEIRO",
+                    "UCN - MINAS GERAIS",
+                    "UCN - SANTA CATARINA",
+                    "CARPINAR" ]
+
 
 # Configurações gerais da página
 st.set_page_config(
