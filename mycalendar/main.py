@@ -39,8 +39,7 @@ tabelaAgencias = [  "RECIFE",
 
 
 # Função para mostrar a tabela quando o botão for clicado
-def mostrarMunicipios(dados):
-    st.write(dados)
+
 
 # Função para fazer upload e atualizar a tabela
 def atualizar_tabela():
@@ -66,19 +65,28 @@ with st.container():
     tabelaFeriados = pd.read_csv("./dados/feriados.csv") #path folder of the data file
     tabelamunicipios = pd.read_csv("./dados/municipiosPe.csv")
     # Botão para mostrar a tabela
-    if st.button('Municipios'):
-       st.write(tabelamunicipios)
-    if st.button('Feriados'):
-       st.write(tabelaFeriados)
+    municipio_on = st.sidebar.checkbox('Municipios')
+    feriado_on = st.sidebar.checkbox('Feriados')
+   
 
+    if municipio_on :
+       st.write(tabelamunicipios)
+    if feriado_on:
+       st.write(tabelaFeriados)
+  
 
     # Formulário
+    listamunicipios = tabelaFeriados['local'].unique().tolist()
+    listamunicipios.remove("BRASIL")
+    listamunicipios.remove("RECESSO")
+    listamunicipios.remove("PERNAMBUCO")
+
     st.subheader("Dados de Entrada")
     agencia = st.selectbox("Agência:", tabelaAgencias)
     curso = st.text_input("Curso:", "")
     turma = st.text_input("Turma:", "")
     turno = st.radio("Turno:", ["Manhã", "Tarde", "Manhã e Tarde"])
-    municipio = st.text_input("Município:", "")
+    municipio = st.selectbox("Município:", listamunicipios )
     data_ini = st.date_input("Data de Início:")
     ferias_inicio = st.date_input("Férias (início):")
     ferias_final = st.date_input("Férias (final):")
