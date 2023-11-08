@@ -62,8 +62,8 @@ st.title("Calendário - Tela de Entrada")
 
 # Criando um contêiner para alinhar o formulário
 with st.container():
-    tabelaFeriados = pd.read_csv("https://github.com/arnottrcaiado/st-calendario/blob/master/mycalendar/dados/feriados.csv") #path folder of the data file
-    tabelamunicipios = pd.read_csv("https://github.com/arnottrcaiado/st-calendario/blob/master/mycalendar/dados/municipiosPe.csv")
+    tabelaFeriados = pd.read_csv("https://raw.githubusercontent.com/arnottrcaiado/st-calendario/master/mycalendar/dados/feriados.csv") #path folder of the data file
+    tabelamunicipios = pd.read_csv("https://raw.githubusercontent.com/arnottrcaiado/st-calendario/master/mycalendar/dados/municipiosPe.csv")
     # Botão para mostrar a tabela
     municipio_on = st.sidebar.checkbox('Municipios')
     feriado_on = st.sidebar.checkbox('Feriados')
