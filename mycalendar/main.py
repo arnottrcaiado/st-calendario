@@ -85,7 +85,9 @@ with st.container():
     agencia = st.selectbox("Agência:", tabelaAgencias)
     curso = st.text_input("Curso:", "")
     turma = st.text_input("Turma:", "")
-    turno = st.radio("Turno:", ["Manhã", "Tarde", "Manhã e Tarde"])
+    # turno = st.radio("Turno:", ["Manhã", "Tarde", "Manhã e Tarde"])
+    turno = st.selectbox("Turno:", ["Manhã", "Tarde", "Manhã e Tarde"])
+
     municipio = st.selectbox("Município:", listamunicipios )
     data_ini = st.date_input("Data de Início:")
     ferias_inicio = st.date_input("Férias (início):")
@@ -94,9 +96,12 @@ with st.container():
     carga_horaria_teorica = st.number_input("Carga Horária Teórica:", min_value=0, max_value=1000)
     formacao_inicial = st.number_input("Formação Inicial (CH):", min_value=0, max_value=200)
     horas_semana = st.number_input("Horas Teóricas por Semana:", min_value=0, max_value=10)
-    dia_semana = st.radio("Aulas Fixas:", ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
-    semana_complementar = st.radio("Aulas Complementares (semana):", ["Sem Aulas Complementares", "Primeira", "Segunda", "Terceira", "Quarta"])
-    dia_complementar = st.radio("Aulas Complementares:", ["Sem Aulas Complementares", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
+    # dia_semana = st.radio("Aulas Fixas:", ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
+    dia_semana = st.selectbox("Aulas Fixas:", ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
+    # semana_complementar = st.radio("Aulas Complementares (semana):", ["Sem Aulas Complementares", "Primeira", "Segunda", "Terceira", "Quarta"])
+    semana_complementar = st.selectbox("Aulas Complementares (semana):", ["Sem Aulas Complementares", "Primeira", "Segunda", "Terceira", "Quarta"])
+    # dia_complementar = st.radio("Aulas Complementares:", ["Sem Aulas Complementares", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
+    dia_complementar = st.selectbox("Aulas Complementares:", ["Sem Aulas Complementares", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"])
 
     # Botões
     col1, col2, col3 = st.columns(3)
